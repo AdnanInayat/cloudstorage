@@ -17,10 +17,14 @@
         {
             // Service
             services.AddScoped<ITransactionService, TransactionService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IFileService, FileService>();
 
             // Repository
             services.AddScoped<IAccountSummaryRepository, AccountSummaryRepository>();
             services.AddScoped<IAccountTransactionRepository, AccountTransactionRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IFileRepository, FileRepository>();
 
             // Mappers
             services.AddAutoMapper(x => x.AddProfile(new MappingProfile()));

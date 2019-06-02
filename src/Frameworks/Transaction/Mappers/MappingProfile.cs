@@ -33,7 +33,37 @@
             CreateMap<AccountSummary, TransactionResult>()
                 .ForMember(dest => dest.Balance, opt => opt.MapFrom(o => o.Balance))
                 .ForMember(dest => dest.IsSuccessful, opt => opt.MapFrom(o => true))
-                .ForMember(dest => dest.Message, opt => opt.MapFrom(o => StringResources.TransactionSuccessfull)); 
+                .ForMember(dest => dest.Message, opt => opt.MapFrom(o => StringResources.TransactionSuccessfull));
+
+            CreateMap<User, UserResult>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(o => o.Id))
+                .ForMember(dest => dest.Fname, opt => opt.MapFrom(o => o.Fname))
+                .ForMember(dest => dest.Lname, opt => opt.MapFrom(o => o.Lname))
+                .ForMember(dest => dest.Username, opt => opt.MapFrom(o => o.Username))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(o => o.Email))
+                .ForMember(dest => dest.Password, opt => opt.MapFrom(o => o.Password))
+                .ForMember(dest => dest.Files, opt => opt.MapFrom(o => o.Files));
+            CreateMap<UserResult, User>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(o => o.Id))
+                .ForMember(dest => dest.Fname, opt => opt.MapFrom(o => o.Fname))
+                .ForMember(dest => dest.Lname, opt => opt.MapFrom(o => o.Lname))
+                .ForMember(dest => dest.Username, opt => opt.MapFrom(o => o.Username))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(o => o.Email))
+                .ForMember(dest => dest.Password, opt => opt.MapFrom(o => o.Password))
+                .ForMember(dest => dest.Files, opt => opt.MapFrom(o => o.Files));
+
+            CreateMap<File, FileResult>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(o => o.Id))
+                .ForMember(dest => dest.FileName, opt => opt.MapFrom(o => o.FileName))
+                .ForMember(dest => dest.FilePath, opt => opt.MapFrom(o => o.FilePath))
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(o => o.UserId))
+                .ForMember(dest => dest.User, opt => opt.MapFrom(o => o.User));
+            CreateMap<FileResult, File>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(o => o.Id))
+                .ForMember(dest => dest.FileName, opt => opt.MapFrom(o => o.FileName))
+                .ForMember(dest => dest.FilePath, opt => opt.MapFrom(o => o.FilePath))
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(o => o.UserId))
+                .ForMember(dest => dest.User, opt => opt.MapFrom(o => o.User));
         }
     }
 }

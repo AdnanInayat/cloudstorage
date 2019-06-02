@@ -18,6 +18,12 @@
             AccountTransactionEntityConfiguration
                 .Configure(modelBuilder.Entity<AccountTransactionEntity>());
 
+            UserEntityConfiguration
+                .Configure(modelBuilder.Entity<User>());
+
+            FileEntityConfiguration
+                .Configure(modelBuilder.Entity<File>());
+
             base.OnModelCreating(modelBuilder);
         }
     }
